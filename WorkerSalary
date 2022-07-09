@@ -1,0 +1,37 @@
+package program;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Worker;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Worker worker = new Worker();
+		
+		System.out.println("Digite o nome do funcionario: ");
+		worker.name = sc.nextLine();
+		
+		System.out.println("Digite o salario bruto do funcionario: ");
+		worker.grossSalary = sc.nextDouble();
+	
+		System.out.println("Digite o imposto a ser cobrado: ");
+		worker.tax = sc.nextDouble();
+				
+		System.out.println(worker.toString());
+		
+		System.out.println("\n\nDigite a porcentagem para o aumento de salario");
+		double percentage = sc.nextDouble();
+		
+		worker.increaseSalary(percentage);
+		
+		System.out.println(worker.toString());
+		
+		sc.close();
+	}
+
+}
