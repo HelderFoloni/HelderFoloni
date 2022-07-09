@@ -1,0 +1,47 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+	Locale.setDefault(Locale.US);	
+	Scanner sc = new Scanner(System.in);
+		
+	Product product = new Product();
+	
+	System.out.println("ENTER PRODUCT NAME: ");
+	product.productName = sc.nextLine();
+	
+	System.out.println("ENTER PRODUCT QUANTITY: ");
+	product.quantStorage = sc.nextInt();
+	
+	System.out.println("ENTER PRODUCT VALUE: ");
+	product.value = sc.nextDouble();
+	
+	System.out.println();
+	System.out.print("STOCK DATA \n" + product.toString());
+	
+	System.out.println();
+	System.out.print("\nQUANTITY TO BE ADD IN STOCK: ");
+	int stockQuant = sc.nextInt();
+	product.addStock(stockQuant);
+	
+	System.out.println();
+	System.out.print("STOCK DATA \n" + product.toString());
+	
+	System.out.println();
+	System.out.print("\nQUANTITY TO BE REMOVED FROM STOCK: ");
+	stockQuant = sc.nextInt();
+	product.removeStock(stockQuant);
+	
+	System.out.println();
+	System.out.print("STOCK DATA \n" + product.toString());
+	
+	sc.close();
+	}
+
+}
