@@ -1,0 +1,27 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Retangle;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		Retangle retangle = new Retangle();
+		
+		System.out.println("Write retangle width: ");
+		retangle.width = sc.nextDouble();
+		
+		System.out.println("Write retangle height: ");
+		retangle.height = sc.nextDouble();
+		
+		System.out.println(retangle.result());
+		
+		sc.close();
+	}
+
+}
