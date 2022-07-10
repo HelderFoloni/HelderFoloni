@@ -1,3 +1,5 @@
+//1st part
+
 package application;
 
 import java.util.Locale;
@@ -44,4 +46,40 @@ public class Program {
 	sc.close();
 	}
 
+}
+
+
+
+//2nd part
+
+package entities;
+
+public class Product {
+	
+	public String productName;
+	public int quantStorage;
+	public double value;
+	
+	public void addStock(int quantStorage) {
+		this.quantStorage += quantStorage;
+	}
+	
+	public void removeStock(int quantStorage) {
+		this.quantStorage -= quantStorage;
+	}
+	
+	public double totalValue() {
+		return this.value *= this.quantStorage;
+	}
+	
+	
+	public String toString() {
+		return ("PRODUCT: " + productName + 
+				"\nSTOCK: " + quantStorage + 
+				"\n" + String.format("VALUE: %.2f", value) + 
+				String.format("\nTOTAL VALUE: %.2f", totalValue()));
+	}
+	
+	
+	
 }
